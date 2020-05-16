@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.1022
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoongEgg.LoongChart.Demo", "LoongEgg.LoongChart.Demo\LoongEgg.LoongChart.Demo.csproj", "{CC4831A5-E371-4B62-A05D-141ABCA7080D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoongEgg.LoongChart.LocalDemo", "LoongEgg.LoongChart.LocalDemo\LoongEgg.LoongChart.LocalDemo.csproj", "{6CB5C793-7038-4A01-B224-E669BF5B6377}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{CC4831A5-E371-4B62-A05D-141ABCA7080D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC4831A5-E371-4B62-A05D-141ABCA7080D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC4831A5-E371-4B62-A05D-141ABCA7080D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CB5C793-7038-4A01-B224-E669BF5B6377}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CB5C793-7038-4A01-B224-E669BF5B6377}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CB5C793-7038-4A01-B224-E669BF5B6377}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CB5C793-7038-4A01-B224-E669BF5B6377}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

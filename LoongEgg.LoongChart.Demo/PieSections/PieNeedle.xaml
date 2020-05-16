@@ -1,0 +1,16 @@
+﻿<Window
+    x:Class="LoongEgg.LoongChart.Demo.PieNeedle"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:LoongEgg.LoongChart.Demo"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mi="clr-namespace:LoongEgg.LoongChart;assembly=LoongEgg.LoongChart"
+    Title="Pie Needle"
+    Width="360"
+    Height="360"
+    mc:Ignorable="d">
+    <Grid>
+        <mi:PieNeedle NeedleWidth="0.1" />
+    </Grid>
+</Window>

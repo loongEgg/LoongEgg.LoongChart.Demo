@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CC4831A5-E371-4B62-A05D-141ABCA7080D}</ProjectGuid>
+    <ProjectGuid>{6CB5C793-7038-4A01-B224-E669BF5B6377}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>LoongEgg.LoongChart.Demo</RootNamespace>
-    <AssemblyName>LoongEgg.LoongChart.Demo</AssemblyName>
+    <RootNamespace>LoongEgg.LoongChart.LocalDemo</RootNamespace>
+    <AssemblyName>LoongEgg.LoongChart.LocalDemo</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -34,15 +34,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LoongEgg.LoongChart, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LoongEgg.LoongChart.1.0.0\lib\net45\LoongEgg.LoongChart.dll</HintPath>
-    </Reference>
-    <Reference Include="LoongEgg.LoongLog.FX45, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LoongEgg.LoongLog.FX45.1.0.0\lib\net45\LoongEgg.LoongLog.FX45.dll</HintPath>
-    </Reference>
-    <Reference Include="LoongEgg.MvvmCore.FX45, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LoongEgg.MvvmCore.FX45.1.0.0\lib\net45\LoongEgg.MvvmCore.FX45.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -63,15 +54,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Gauge\GaugeDemo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Gauge\GaugeValueControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Menu.xaml">
+    <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -79,41 +62,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DesignModels.cs" />
-    <Compile Include="Gauge\GaugeDemo.xaml.cs">
-      <DependentUpon>GaugeDemo.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Gauge\GaugeDemoViewModel.cs" />
-    <Compile Include="Gauge\GaugeValueControl.xaml.cs">
-      <DependentUpon>GaugeValueControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Menu.xaml.cs">
-      <DependentUpon>Menu.xaml</DependentUpon>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="PieSections\PieNeedle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="PieSections\PieShapes.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="PieSections\PieTickes.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PieSections\PieNeedle.xaml.cs">
-      <DependentUpon>PieNeedle.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PieSections\PieShapes.xaml.cs">
-      <DependentUpon>PieShapes.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PieSections\PieTickes.xaml.cs">
-      <DependentUpon>PieTickes.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -131,7 +85,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

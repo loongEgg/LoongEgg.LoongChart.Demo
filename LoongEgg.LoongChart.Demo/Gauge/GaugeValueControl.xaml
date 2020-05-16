@@ -1,12 +1,13 @@
-﻿<Window x:Class="LoongEgg.LoongChart.Demo.MainWindow"
+﻿<Window x:Class="LoongEgg.LoongChart.Demo.GaugeValueControl"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LoongEgg.LoongChart.Demo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        d:DataContext="{x:Static local:DesignModels.ViewModel}"
+        Title="GaugeValueControl" Height="260" Width="360">
     <Grid>
-        
+        <Slider Maximum="180" Minimum="0" Value="{Binding Value}"/>
     </Grid>
 </Window>
