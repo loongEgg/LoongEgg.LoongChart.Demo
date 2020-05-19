@@ -3,29 +3,146 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:lc="clr-namespace:LoongEgg.LoongChart;assembly=LoongEgg.LoongChart"
     xmlns:local="clr-namespace:LoongEgg.LoongChart.Demo"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:mi="clr-namespace:LoongEgg.LoongChart;assembly=LoongEgg.LoongChart"
     x:Name="self"
-    Title="GaugeOnly"
+    Title="Gauge Demo"
     Width="1200"
     Height="600"
     d:DataContext="{x:Static local:DesignModels.ViewModel}"
+    Style="{StaticResource WindowStyle.Aero}"
     mc:Ignorable="d">
+    <Window.Resources>
+        <Style x:Key="GaugeStyle1" TargetType="{x:Type lc:Gauge}">
+            <Setter Property="ValueMin" Value="0" />
+            <Setter Property="ValueMax" Value="180" />
+            <Setter Property="AngleMin" Value="120" />
+            <Setter Property="AngleMax" Value="420" />
+            <Setter Property="ReadOut" Value="90" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="ColorSections">
+                <Setter.Value>
+                    <lc:PieColorDefinitions>
+                        <lc:PieColorDefinition
+                            Fill="Chocolate"
+                            RadiusMax="0.75"
+                            RadiusMin="0.65"
+                            ValueMax="180"
+                            ValueMin="90" />
+                        <lc:PieColorDefinition
+                            Fill="DarkGreen"
+                            RadiusMax="0.75"
+                            RadiusMin="0.65"
+                            ValueMax="30"
+                            ValueMin="0" />
+                    </lc:PieColorDefinitions>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="TickSections">
+                <Setter.Value>
+                    <lc:PieTickDefinitions>
+                        <lc:PieTickDefinition
+                            RadiusMax="0.75"
+                            RadiusMin="0.6"
+                            Step="30"
+                            TickWidth="6"
+                            ValueMax="180"
+                            ValueMin="0"
+                            Color="White" />
+                        <lc:PieTickDefinition
+                            RadiusMax="0.75"
+                            RadiusMin="0.65"
+                            Step="10"
+                            TickWidth="2"
+                            ValueMax="0"
+                            ValueMin="180"
+                            Color="White" />
+                    </lc:PieTickDefinitions>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="LableDefinition">
+                <Setter.Value>
+                    <lc:LableDefinition FontSize="24" />
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type lc:Gauge}">
+                        <Border
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                            <Grid>
+                                <Canvas
+                                    x:Name="PART_ColorSectionCanvas"
+                                    Width="{TemplateBinding Width}"
+                                    Height="{TemplateBinding Height}"
+                                    Background="Transparent" />
+                                <Canvas
+                                    x:Name="PART_TickSectionCanvas"
+                                    Width="{TemplateBinding Width}"
+                                    Height="{TemplateBinding Height}"
+                                    Background="Transparent" />
+                                <Canvas
+                                    x:Name="PART_NeedleCanvas"
+                                    Width="{TemplateBinding Width}"
+                                    Height="{TemplateBinding Height}"
+                                    Background="Transparent">
+                                    <lc:PieNeedle
+                                        x:Name="PART_NeedleShape"
+                                        Width="{Binding ActualWidth, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type Canvas}}}"
+                                        Height="{Binding ActualHeight, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type Canvas}}}"
+                                        Fill="SteelBlue"
+                                        RenderTransformOrigin="0.5,0.5"
+                                        Stroke="SteelBlue"
+                                        StrokeThickness="2">
+                                        <lc:PieNeedle.RenderTransform>
+                                            <RotateTransform Angle="{Binding Angle, RelativeSource={RelativeSource TemplatedParent}}" />
+                                        </lc:PieNeedle.RenderTransform>
+                                    </lc:PieNeedle>
+                                </Canvas>
+                                <Canvas
+                                    x:Name="PART_LableCanvas"
+                                    Width="{TemplateBinding Width}"
+                                    Height="{TemplateBinding Height}"
+                                    Background="Transparent" />
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <TextBlock FontSize="28" TextAlignment="Center"><Run Text="Loong" /></TextBlock>
+                                    <TextBlock
+                                        FontSize="28"
+                                        Text="{Binding ReadOut, RelativeSource={RelativeSource TemplatedParent}, StringFormat=\{0:F2\}}"
+                                        TextAlignment="Center" />
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <mi:Gauge
+        <lc:Gauge
             AngleMax="{Binding AngleMax}"
             AngleMin="{Binding AngleMin}"
             Background="Black"
             ColorSections="{Binding ColorsSections}"
             LableDefinition="{Binding LableDefinition}"
+            ReadOut="{Binding Value}"
+            Style="{DynamicResource GaugeStyle1}"
             TickSections="{Binding TickSections}"
             ValueMax="{Binding ValueMax}"
-            ValueMin="{Binding ValueMin}"
-            Value="{Binding Value}" />
+            ValueMin="{Binding ValueMin}" />
+        <lc:Gauge
+            Grid.Column="1"
+            Background="#FF001E26"
+            ReadOut="{Binding Value}"
+            Style="{DynamicResource GaugeStyle1}"
+            ValueMax="180" />
     </Grid>
 </Window>

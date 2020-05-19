@@ -15,8 +15,5 @@ namespace LoongEgg.LoongChart.Demo
             GaugeValueControl control = new GaugeValueControl { DataContext = this.DataContext};
             control.Show();
         }
-
-         
-
     }
 }

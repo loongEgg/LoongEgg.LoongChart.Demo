@@ -1,0 +1,190 @@
+﻿<ResourceDictionary
+    x:Class="LoongEgg.LoongChart.Windows"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:LoongEgg.LoongChart">
+
+    <Style x:Key="WindowStyle.Aero" TargetType="{x:Type Window}">
+        <Setter Property="WindowStyle" Value="None" />
+        <Setter Property="AllowsTransparency" Value="True" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="Height" Value="650" />
+        <Setter Property="Width" Value="960" />
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Background" Value="#FF007ACC" />
+        <Setter Property="BorderBrush" Value="Chocolate" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Window}">
+
+                    <Border
+                        x:Name="windowBorder"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+
+                        <Grid Background="Transparent">
+
+                            <!--  窗口主体  -->
+                            <Grid Margin="0,36,0,0">
+                                <ContentPresenter
+                                    Content="{TemplateBinding Content}"
+                                    ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                                    ContentTemplate="{TemplateBinding ContentTemplate}" />
+                            </Grid>
+
+                            <!--  标题栏  -->
+                            <Border
+                                Height="36"
+                                VerticalAlignment="Top"
+                                Panel.ZIndex="9999"
+                                Background="{TemplateBinding Background}"
+                                MouseLeftButtonDown="Title_MouseLeftButtonDown">
+
+                                <Grid>
+                                    <TextBlock
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        FontSize="16"
+                                        Foreground="{TemplateBinding Foreground}"
+                                        Text="{TemplateBinding Title}"
+                                        TextAlignment="Center" />
+                                    <StackPanel
+                                        HorizontalAlignment="Right"
+                                        ButtonBase.Click="WindowStateButton_Click"
+                                        Orientation="Horizontal">
+                                        <StackPanel.Resources>
+                                            <Style x:Key="ButtonStyle.WindowControl" TargetType="{x:Type Button}">
+                                                <Setter Property="Width" Value="40" />
+                                                <Setter Property="Height" Value="36" />
+                                                <Setter Property="Background" Value="Transparent" />
+                                                <Setter Property="BorderBrush" Value="Transparent" />
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="{x:Type Button}">
+                                                            <Border
+                                                                x:Name="border"
+                                                                Background="{TemplateBinding Background}"
+                                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                                SnapsToDevicePixels="true">
+                                                                <ContentPresenter
+                                                                    x:Name="contentPresenter"
+                                                                    Margin="{TemplateBinding Padding}"
+                                                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                                    Focusable="False"
+                                                                    RecognizesAccessKey="True"
+                                                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                                            </Border>
+                                                            <ControlTemplate.Triggers>
+                                                                <Trigger Property="IsMouseOver" Value="true">
+                                                                    <Setter TargetName="border" Property="Background" Value="Chocolate" />
+                                                                </Trigger>
+                                                            </ControlTemplate.Triggers>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Style>
+
+                                            <Style
+                                                x:Key="ButtonStyle.WindowClose"
+                                                BasedOn="{StaticResource ButtonStyle.WindowControl}"
+                                                TargetType="{x:Type Button}">
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="{x:Type Button}">
+                                                            <Border
+                                                                x:Name="border"
+                                                                Background="{TemplateBinding Background}"
+                                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                                SnapsToDevicePixels="true">
+                                                                <ContentPresenter
+                                                                    x:Name="contentPresenter"
+                                                                    Margin="{TemplateBinding Padding}"
+                                                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                                    Focusable="False"
+                                                                    RecognizesAccessKey="True"
+                                                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                                            </Border>
+                                                            <ControlTemplate.Triggers>
+                                                                <Trigger Property="IsMouseOver" Value="true">
+                                                                    <Setter TargetName="border" Property="Background" Value="Red" />
+                                                                </Trigger>
+                                                            </ControlTemplate.Triggers>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Style>
+
+                                            <Style x:Key="PathStyle.WindowControl" TargetType="{x:Type Path}">
+                                                <Setter Property="Width" Value="30" />
+                                                <Setter Property="Height" Value="30" />
+                                                <Setter Property="StrokeThickness" Value="2" />
+                                            </Style>
+                                        </StackPanel.Resources>
+
+                                        <!--  最小化  -->
+                                        <Button Style="{StaticResource ButtonStyle.WindowControl}" Tag="Minimize">
+                                            <Path Stroke="{TemplateBinding Foreground}" Style="{StaticResource PathStyle.WindowControl}">
+                                                <Path.Data>M10, 15 L20, 15</Path.Data>
+                                            </Path>
+                                        </Button>
+
+                                        <!--  最大化  -->
+                                        <Button Style="{StaticResource ButtonStyle.WindowControl}" Tag="Maximize">
+                                            <Path Stroke="{TemplateBinding Foreground}" Style="{StaticResource PathStyle.WindowControl}">
+                                                <!--  M为第一个点，最后加Z代表图形自动封闭起始点  -->
+                                                <Path.Data>M10, 10 L20, 10 L20, 20 L10, 20Z</Path.Data>
+                                            </Path>
+                                        </Button>
+
+                                        <!--  关闭  -->
+                                        <Button Style="{StaticResource ButtonStyle.WindowClose}" Tag="Close">
+                                            <Path Stroke="{TemplateBinding Foreground}" Style="{StaticResource PathStyle.WindowControl}">
+                                                <Path.Data>
+                                                    <GeometryGroup>
+                                                        <LineGeometry StartPoint="10,10" EndPoint="20,20" />
+                                                        <LineGeometry StartPoint="20,10" EndPoint="10,20" />
+                                                    </GeometryGroup>
+                                                </Path.Data>
+                                            </Path>
+                                        </Button>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+
+                            <!--  缩放手柄  -->
+                            <Border
+                                Width="30"
+                                Height="30"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Bottom"
+                                Background="Transparent"
+                                Cursor="SizeNWSE"
+                                MouseLeftButtonDown="Window_WidenInitial"
+                                MouseLeftButtonUp="Window_WidenEnd"
+                                MouseMove="Window_Widen">
+                                <Path
+                                    Width="30"
+                                    Height="30"
+                                    Stroke="{TemplateBinding Foreground}"
+                                    StrokeThickness="2">
+                                    <Path.Data>
+                                        <GeometryGroup>
+                                            <LineGeometry StartPoint="20, 25" EndPoint="25, 20" />
+                                            <LineGeometry StartPoint="15, 25" EndPoint="25, 15" />
+                                            <LineGeometry StartPoint="10, 25" EndPoint="25, 10" />
+                                        </GeometryGroup>
+                                    </Path.Data>
+                                </Path>
+                            </Border>
+                        </Grid>
+                    </Border>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

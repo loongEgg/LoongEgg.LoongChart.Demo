@@ -29,7 +29,8 @@ namespace LoongEgg.LoongChart.Demo
         }
         private PieColorDefinitions _ColorsSections = new PieColorDefinitions {
                     new PieColorDefinition{ ValueMax = 180, ValueMin = 90, Fill = Brushes.Chocolate, RadiusMax = 0.75, RadiusMin = 0.65 },
-                    new PieColorDefinition{ ValueMax = 30, ValueMin = 0, Fill = Brushes.DarkGreen, RadiusMax = 0.75, RadiusMin = 0.65 },
+                    new PieColorDefinition{ ValueMax = 30, ValueMin = 0, Fill = Brushes.White, RadiusMax = 0.75, RadiusMin = 0.70 },
+                    new PieColorDefinition{ ValueMax = 30, ValueMin = 0, Fill = Brushes.DarkGreen, RadiusMax = 0.70, RadiusMin = 0.65 },
                 };
 
 
@@ -38,8 +39,8 @@ namespace LoongEgg.LoongChart.Demo
             set => SetProperty(ref _TickSections, value);
         }
         private PieTickDefinitions _TickSections = new PieTickDefinitions {
-                    new PieTickDefinition{ ValueMax = 180, ValueMin = 0, Color = Brushes.SteelBlue, RadiusMax = 0.75, RadiusMin = 0.6, Step = 30, Width =6},
-                    new PieTickDefinition{ ValueMax = 180, ValueMin = 0, Color = Brushes.SteelBlue, RadiusMax = 0.75, RadiusMin = 0.65, Step = 10, Width =2 },
+                    new PieTickDefinition{ ValueMax = 180, ValueMin = 0, Color = Brushes.SteelBlue, RadiusMax = 0.75, RadiusMin = 0.6, Step = 30, TickWidth =6},
+                    new PieTickDefinition{ ValueMax = 180, ValueMin = 0, Color = Brushes.SteelBlue, RadiusMax = 0.75, RadiusMin = 0.65, Step = 10, TickWidth =2 },
                 };
          
         public LableDefinition LableDefinition {

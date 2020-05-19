@@ -3,19 +3,19 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:lc="clr-namespace:LoongEgg.LoongChart;assembly=LoongEgg.LoongChart"
     xmlns:local="clr-namespace:LoongEgg.LoongChart.Demo"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:mi="clr-namespace:LoongEgg.LoongChart;assembly=LoongEgg.LoongChart"
     Title="Pie Sections"
     Width="320"
     Height="320"
     mc:Ignorable="d">
     <Window.Resources>
-        <Style TargetType="{x:Type mi:PieShape}" />
+        <Style TargetType="{x:Type lc:PieShape}" />
     </Window.Resources>
     <Grid>
 
-        <mi:PieShape
+        <lc:PieShape
             AngleMax="180"
             AngleMin="270"
             Fill="Chocolate"
@@ -24,21 +24,21 @@
             Stroke="Blue"
             StrokeThickness="2" />
 
-        <mi:PieShape
+        <lc:PieShape
             AngleMax="90"
             AngleMin="0"
             Fill="Red"
             RadiusMax="0.65"
             RadiusMin="0.75" />
 
-        <mi:PieShape
+        <lc:PieShape
             AngleMax="90"
             AngleMin="0"
             Fill="Yellow"
             RadiusMax="0.55"
             RadiusMin="0.65" />
 
-        <mi:PieShape
+        <lc:PieShape
             AngleMax="90"
             AngleMin="0"
             Fill="Blue"
