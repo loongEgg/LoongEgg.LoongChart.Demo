@@ -1,8 +1,9 @@
 ﻿<ResourceDictionary
-    x:Class="LoongEgg.LoongChart.Windows"
+    x:Class="LoongEgg.LoongChart.Demo.Windows"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:LoongEgg.LoongChart">
+    xmlns:local="clr-namespace:LoongEgg.LoongChart.Demo">
+
 
     <Style x:Key="WindowStyle.Aero" TargetType="{x:Type Window}">
         <Setter Property="WindowStyle" Value="None" />
@@ -10,7 +11,7 @@
         <Setter Property="BorderThickness" Value="2" />
         <Setter Property="Height" Value="650" />
         <Setter Property="Width" Value="960" />
-        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Foreground" Value="White" />
         <Setter Property="Background" Value="#FF007ACC" />
         <Setter Property="BorderBrush" Value="Chocolate" />
         <Setter Property="Template">
@@ -187,4 +188,5 @@
             </Setter.Value>
         </Setter>
     </Style>
+
 </ResourceDictionary>

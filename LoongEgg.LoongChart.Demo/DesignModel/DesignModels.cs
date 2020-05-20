@@ -12,5 +12,7 @@ namespace LoongEgg.LoongChart.Demo
     public class DesignModels
     {
         public static GaugeDemoViewModel ViewModel { get; set; } = new GaugeDemoViewModel();
+
+        public static MenuViewModel MenuViewModel { get; private set; } = new MenuViewModel();
     }
 }

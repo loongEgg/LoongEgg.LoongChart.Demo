@@ -6,7 +6,13 @@
     xmlns:local="clr-namespace:LoongEgg.LoongChart.Demo"
     StartupUri="Menu.xaml">
     <Application.Resources>
-        <ResourceDictionary Source="pack://application:,,,/LoongEgg.LoongChart.Demo;component/Themes/Styles/Windows.xaml" />
-
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/LoongEgg.LoongChart.Demo;component/Themes/Generic.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/LoongEgg.LoongChart;component/Themes/Generic.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <!--  默认Window样式  -->
+            <!--<Style BasedOn="{StaticResource WindowStyle.Aero}" TargetType="{x:Type Window}" />-->
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -34,8 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LoongEgg.LoongChart, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LoongEgg.LoongChart.1.1.2\lib\net45\LoongEgg.LoongChart.dll</HintPath>
+    <Reference Include="LoongEgg.LoongChart, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LoongEgg.LoongChart.1.1.3\lib\net45\LoongEgg.LoongChart.dll</HintPath>
     </Reference>
     <Reference Include="LoongEgg.LoongLog.FX45, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\LoongEgg.LoongLog.FX45.1.0.0\lib\net45\LoongEgg.LoongLog.FX45.dll</HintPath>
@@ -63,6 +63,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\MenuViewModel.cs" />
     <Compile Include="Themes\Styles\Windows.xaml.cs">
       <DependentUpon>Windows.xaml</DependentUpon>
     </Compile>
@@ -82,11 +83,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DesignModels.cs" />
+    <Compile Include="DesignModel\DesignModels.cs" />
     <Compile Include="Gauge\GaugeDemo.xaml.cs">
       <DependentUpon>GaugeDemo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauge\GaugeDemoViewModel.cs" />
+    <Compile Include="ViewModel\GaugeDemoViewModel.cs" />
     <Compile Include="Gauge\GaugeValueControl.xaml.cs">
       <DependentUpon>GaugeValueControl.xaml</DependentUpon>
     </Compile>

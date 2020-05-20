@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace LoongEgg.LoongChart
+namespace LoongEgg.LoongChart.Demo
 {
     /// <summary>
     /// Windows.xaml 的交互逻辑

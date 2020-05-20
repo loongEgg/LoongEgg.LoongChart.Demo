@@ -1,9 +1,9 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:LoongEgg.LoongChart">
+    xmlns:local="clr-namespace:LoongEgg.LoongChart.Demo">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/LoongEgg.LoongChart;component/Themes/Styles/Gauges.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/LoongEgg.LoongChart.Demo;component/Themes/Styles/Windows.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

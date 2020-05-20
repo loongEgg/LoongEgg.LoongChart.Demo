@@ -12,6 +12,7 @@ namespace LoongEgg.LoongChart.Demo
     {
         public Menu() {
             InitializeComponent();
+            DataContext = new MenuViewModel();
         }
 
          private void Button_Click(object sender, RoutedEventArgs e) {
