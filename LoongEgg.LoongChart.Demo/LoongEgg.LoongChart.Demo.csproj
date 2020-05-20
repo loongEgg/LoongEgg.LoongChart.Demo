@@ -63,6 +63,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\ComunicationViewModel.cs" />
+    <Compile Include="WindowComunication\MasterWindow.xaml.cs">
+      <DependentUpon>MasterWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowComunication\SlaveWindow.xaml.cs">
+      <DependentUpon>SlaveWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\MenuViewModel.cs" />
     <Compile Include="Themes\Styles\Windows.xaml.cs">
       <DependentUpon>Windows.xaml</DependentUpon>
@@ -74,6 +81,10 @@
     <Page Include="Gauge\GaugeValueControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WindowComunication\MasterWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Menu.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -106,6 +117,10 @@
     <Page Include="PieSections\PieTickes.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WindowComunication\SlaveWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
