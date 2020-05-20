@@ -35,6 +35,7 @@
             <Button Content="Pie Needle" />
             <Button Content="Gauge Demo" />
             <Button Content="Master Window" />
+            <Button Content="Master Window IoC" />
         </StackPanel>
     </Grid>
 </Window>

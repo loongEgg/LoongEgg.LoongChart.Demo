@@ -40,8 +40,8 @@
     <Reference Include="LoongEgg.LoongLog.FX45, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\LoongEgg.LoongLog.FX45.1.0.0\lib\net45\LoongEgg.LoongLog.FX45.dll</HintPath>
     </Reference>
-    <Reference Include="LoongEgg.MvvmCore.FX45, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LoongEgg.MvvmCore.FX45.1.0.0\lib\net45\LoongEgg.MvvmCore.FX45.dll</HintPath>
+    <Reference Include="LoongEgg.MvvmCore.FX45, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LoongEgg.MvvmCore.FX45.1.0.1\lib\net45\LoongEgg.MvvmCore.FX45.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -64,8 +64,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ViewModel\ComunicationViewModel.cs" />
+    <Compile Include="IoC\MasterWindowIoC.xaml.cs">
+      <DependentUpon>MasterWindowIoC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowComunication\MasterWindow.xaml.cs">
       <DependentUpon>MasterWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IoC\SlaveWindowIoC.xaml.cs">
+      <DependentUpon>SlaveWindowIoC.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowComunication\SlaveWindow.xaml.cs">
       <DependentUpon>SlaveWindow.xaml</DependentUpon>
@@ -79,6 +85,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauge\GaugeValueControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="IoC\MasterWindowIoC.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -115,6 +125,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="PieSections\PieTickes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="IoC\SlaveWindowIoC.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

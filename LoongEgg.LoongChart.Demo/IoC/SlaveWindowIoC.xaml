@@ -1,0 +1,20 @@
+﻿<Window
+    x:Class="LoongEgg.LoongChart.Demo.SlaveWindowIoC"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:LoongEgg.LoongChart.Demo"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="self"
+    Title="Slave Window IoC"
+    Width="360"
+    Height="220"
+    DataContext="{Binding ElementName=self}"
+    mc:Ignorable="d">
+    <Grid>
+        <TextBlock
+            FontSize="56"
+            Foreground="Blue"
+            Text="{Binding VM.SuperMessage}" />
+    </Grid>
+</Window>
