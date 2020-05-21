@@ -11,9 +11,9 @@ namespace LoongEgg.LoongChart.Demo
         public MasterWindowIoC()
         {
             InitializeComponent();
-            new SlaveWindowIoC().Show();
+            DataContext = IoC.GetSingleton<ComunicationViewModel>();
         }
-
-        public ComunicationViewModel VM { get; private set; } = IoC.GetSingleton<ComunicationViewModel>(); 
+         
+        //public ComunicationViewModel VM { get; private set; } = IoC.GetSingleton<ComunicationViewModel>(); 
     }
 }
