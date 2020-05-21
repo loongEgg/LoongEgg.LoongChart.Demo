@@ -1,0 +1,45 @@
+﻿<Window
+    x:Class="LoongEgg.LoongChart.Demo.GaugeIoC"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:lc="clr-namespace:LoongEgg.LoongChart;assembly=LoongEgg.LoongChart"
+    xmlns:local="clr-namespace:LoongEgg.LoongChart.Demo"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Gauge IoC"
+    Width="360"
+    Height="360"
+    d:DataContext="{x:Type local:ComunicationViewModel}"
+    Style="{StaticResource WindowStyle.Aero}"
+    mc:Ignorable="d">
+    <Grid>
+        <lc:Gauge
+            AngleMax="240"
+            ReadOut="{Binding Indicator}"
+            ValueMax="90">
+            <lc:Gauge.ColorSections>
+                <lc:PieColorDefinitions>
+                    <lc:PieColorDefinition RadiusMin="0.7" ValueMax="30" />
+                    <lc:PieColorDefinition
+                        RadiusMin="0.7"
+                        ValueMax="60"
+                        ValueMin="90" />
+                </lc:PieColorDefinitions>
+            </lc:Gauge.ColorSections>
+            <lc:Gauge.TickSections>
+                <lc:PieTickDefinitions>
+                    <lc:PieTickDefinition
+                        RadiusMin="0.65"
+                        ValueMax="90"
+                        Color="White" />
+                    <lc:PieTickDefinition
+                        RadiusMin="0.65"
+                        Step="30"
+                        TickWidth="6"
+                        ValueMax="90"
+                        Color="White" />
+                </lc:PieTickDefinitions>
+            </lc:Gauge.TickSections>
+        </lc:Gauge>
+    </Grid>
+</Window>

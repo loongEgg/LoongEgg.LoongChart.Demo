@@ -34,8 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LoongEgg.LoongChart, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LoongEgg.LoongChart.1.1.3\lib\net45\LoongEgg.LoongChart.dll</HintPath>
+    <Reference Include="LoongEgg.LoongChart, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LoongEgg.LoongChart.1.1.2\lib\net45\LoongEgg.LoongChart.dll</HintPath>
     </Reference>
     <Reference Include="LoongEgg.LoongLog.FX45, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\LoongEgg.LoongLog.FX45.1.0.0\lib\net45\LoongEgg.LoongLog.FX45.dll</HintPath>
@@ -63,6 +63,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="IoC\GaugeIoC.xaml.cs">
+      <DependentUpon>GaugeIoC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\ComunicationViewModel.cs" />
     <Compile Include="IoC\MasterWindowIoC.xaml.cs">
       <DependentUpon>MasterWindowIoC.xaml</DependentUpon>
@@ -80,6 +83,10 @@
     <Compile Include="Themes\Styles\Windows.xaml.cs">
       <DependentUpon>Windows.xaml</DependentUpon>
     </Compile>
+    <Page Include="IoC\GaugeIoC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Gauge\GaugeDemo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

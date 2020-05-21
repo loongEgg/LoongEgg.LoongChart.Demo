@@ -15,8 +15,8 @@ using System.Threading.Tasks;
  */
 namespace LoongEgg.LoongChart.Demo
 {
-	
-    public class ComunicationViewModel:ViewModel
+
+    public class ComunicationViewModel : ViewModel
     {
 
         public double SuperMessage
@@ -25,6 +25,14 @@ namespace LoongEgg.LoongChart.Demo
             set => SetProperty(ref _SuperMessage, value);
         }
         private double _SuperMessage = 666;
+
+
+        public double Indicator
+        {
+            get => _Indicator;
+            set => SetProperty(ref _Indicator, value);
+        }
+        private double _Indicator = 30;
 
     }
 }

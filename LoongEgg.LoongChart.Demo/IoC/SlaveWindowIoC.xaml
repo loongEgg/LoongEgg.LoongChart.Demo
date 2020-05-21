@@ -8,7 +8,7 @@
     Title="Slave Window IoC"
     Width="360"
     Height="220"
-    d:DataContext="{x:Type local:ComunicationViewModel}"
+    d:DataContext="{x:Static local:DesignModels.ComunicationViewModel}"
     mc:Ignorable="d">
     <Grid>
         <TextBlock

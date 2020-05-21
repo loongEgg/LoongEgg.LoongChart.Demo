@@ -37,6 +37,7 @@
             <Button Content="Master Window" />
             <Button Content="Master Window IoC" />
             <Button Content="Slave Window IoC" />
+            <Button Content="Gauge IoC" />
         </StackPanel>
     </Grid>
 </Window>
